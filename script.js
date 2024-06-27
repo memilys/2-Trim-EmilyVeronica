@@ -84,8 +84,9 @@ const perguntas = [
     },
   ];
 
-let atual = 0;
-let perguntaAtual;
+  let atual = 0;
+  let perguntaAtual;
+  let historiaFinal = "";
 
 function mostraAlternativas() {
   for (const alternativa of perguntaAtual.alternativas) {
@@ -99,4 +100,9 @@ function mostraAlternativas() {
   }
 }
 
-mostraPergunta();
+function respostaSelecionada(opcaoSelecionada){
+  const afirmacoes = opcaoSelecionada.afirmacoes;
+  historiaFinal = afirmacoes;
+  atual++;
+  mostraPergunta();
+}
