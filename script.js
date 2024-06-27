@@ -6,8 +6,7 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-      enunciado:
-        "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+      enunciado:"Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
       alternativas: [
         {
           texto: "Isso é assustador!",
@@ -20,8 +19,7 @@ const perguntas = [
       ],
     },
     {
-      enunciado:
-        "Com a descoberta desta tecnologia, chamada Inteligência Artificial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
+      enunciado:"Com a descoberta desta tecnologia, chamada Inteligência Artificial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
       alternativas: [
         {
           texto:
@@ -84,9 +82,18 @@ const perguntas = [
     },
   ];
 
-  let atual = 0;
-  let perguntaAtual;
-  let historiaFinal = "";
+ let atual = 0;
+let perguntaAtual;
+let historiaFinal = "";
+
+function mostraAlternativas(){
+  for(const alternativa of perguntaAtual){
+      const botaoAlternativas = document.createElement("button");
+      botaoAlternativas.textContent = alternativa.texto;
+      botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+      caixaAlternativas.appendChild(botaoAlternativas);
+  }
+}
 
 function mostraAlternativas() {
   for (const alternativa of perguntaAtual.alternativas) {
