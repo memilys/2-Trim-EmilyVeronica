@@ -40,7 +40,7 @@ const perguntas = [
             },
             {
                 texto: "falso",
-                afirmacao: "verdadeiro"
+                afirmacao: "correto"
             }
         ]
     },
